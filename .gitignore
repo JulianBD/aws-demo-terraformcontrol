@@ -6,6 +6,9 @@
 *.tfstate.*
 *.terraform.lock.hcl*
 
+**/.terraform.env
+*.terraform.env
+
 # Crash log files
 crash.log
 crash.*.log

@@ -29,6 +29,11 @@ else
   source "$2-$3/terraform.env"
 fi
 
+if [ -f "$2-$3/.terraform.env" ] && [ -s "$2-$3/.terraform.env" ]
+then
+  source "$2-$3/.terraform.env"
+fi
+env | grep 'TF_VAR'
 if [ -z "$S3_REMOTE_STATE_BUCKET" ] || [ -z "$S3_REMOTE_STATE_KEY" ]
 then 
   echo "S3_REMOTE_STATE_BUCKET and/or S3_REMOTE_STATE_KEY environment variable(s) not set in terraform.env for $2-$3"
